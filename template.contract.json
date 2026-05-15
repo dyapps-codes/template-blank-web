@@ -1,0 +1,554 @@
+{
+  "contract_version": "1",
+  "slug": "template-blank-web",
+  "version": "1.0.0",
+  "name": "Public Web / Landing",
+  "short_description": "Base publica sin login para landings, webs de marca, portfolios y sitios institucionales. No incluye auth ni admin.",
+  "long_description": "Starter Vite + React + TypeScript para sitios publicos sin login: landings, paginas de presentacion, portafolios, sitios institucionales, micrositios y webs informativas. Trae rutas publicas (/, /about, /contact), shadcn/ui, Tailwind, react-query, lucide-react y el cliente DYPAI listo para llamar endpoints publicos (formularios de contacto, newsletter, leads). Las pages de auth (Login, ForgotPassword, ResetPassword) vienen incluidas en src/pages/ pero NO estan rutadas por defecto: son un escape hatch listo para activar si el usuario decide despues que quiere login.",
+  "status": "staging",
+  "template_type": "base",
+  "maturity": "stable",
+  "quality_score": 0.85,
+  "source": {
+    "kind": "github",
+    "repo": "dyapps-codes/template-blank-web",
+    "ref": "main",
+    "path": "",
+    "uri": "https://github.com/dyapps-codes/template-blank-web"
+  },
+  "selection": {
+    "categories": [
+      "base",
+      "public-web",
+      "landing",
+      "marketing",
+      "no-auth"
+    ],
+    "tags": [
+      "vite",
+      "react",
+      "typescript",
+      "tailwind",
+      "shadcn",
+      "landing",
+      "marketing",
+      "public",
+      "portfolio",
+      "institutional"
+    ],
+    "aliases": [
+      "web",
+      "landing",
+      "landing page",
+      "pagina publica",
+      "web de presentacion",
+      "sitio web",
+      "portfolio",
+      "web de marca",
+      "micrositio",
+      "pagina institucional",
+      "web informativa",
+      "web corporativa",
+      "pagina de empresa",
+      "sitio sin login",
+      "web sin admin"
+    ],
+    "first_message_examples": [
+      "Quiero una landing page para mi marca",
+      "Necesito una web publica para mi empresa",
+      "Hazme un portfolio bonito de mis proyectos",
+      "Una pagina de presentacion para mi servicio",
+      "Quiero un sitio web informativo para mi negocio",
+      "Una web sencilla para presentar lo que hago",
+      "Necesito una pagina de marketing para captar interesados",
+      "Hazme una web institucional sin login"
+    ],
+    "negative_examples": [
+      "Quiero un panel de administracion para mi equipo",
+      "Necesito un CRM con login para gestionar clientes",
+      "Hazme una app privada con dashboard",
+      "Una herramienta interna con usuarios y roles",
+      "Una app con landing publica y zona privada para administrar",
+      "Un backoffice para gestionar mi negocio",
+      "Necesito un ecommerce con carrito y pagos"
+    ],
+    "use_case_keywords": {
+      "primary": [
+        "landing",
+        "web publica",
+        "portfolio",
+        "marketing",
+        "presentacion",
+        "marca",
+        "institucional",
+        "micrositio"
+      ],
+      "natural_language": [
+        "pagina de",
+        "web de",
+        "presentar mi",
+        "mostrar mi",
+        "captar interesados",
+        "darme a conocer",
+        "mi marca",
+        "mi servicio"
+      ],
+      "domains": [
+        "marca personal",
+        "empresa",
+        "freelancer",
+        "creativo",
+        "agencia",
+        "servicio profesional",
+        "evento",
+        "producto"
+      ],
+      "actions": [
+        "presentar",
+        "mostrar trabajo",
+        "captar leads",
+        "informar",
+        "comunicar marca",
+        "atraer clientes"
+      ],
+      "anti": [
+        "login",
+        "admin",
+        "panel",
+        "gestion interna",
+        "privado",
+        "dashboard",
+        "backoffice",
+        "intranet",
+        "usuarios y roles"
+      ]
+    },
+    "industries": [
+      "general",
+      "creative",
+      "professional-services",
+      "personal-brand"
+    ],
+    "use_cases": [
+      "landing-page",
+      "marketing-site",
+      "portfolio",
+      "institutional-site",
+      "personal-brand",
+      "service-presentation",
+      "event-site",
+      "product-microsite"
+    ],
+    "visual_styles": [
+      "modern-marketing",
+      "warm-brand",
+      "bold-portfolio",
+      "clean-institutional",
+      "creative-showcase"
+    ],
+    "best_for": [
+      "Landings, webs de marca o sitios de presentacion sin necesidad de login.",
+      "Portfolios de freelancers, creativos, agencias o profesionales.",
+      "Micrositios de eventos, productos, lanzamientos o campañas.",
+      "Sitios institucionales informativos sin operacion interna.",
+      "Webs que solo necesitan formularios publicos (contacto, newsletter, lead capture)."
+    ],
+    "not_for": [
+      "Apps con login, gestion privada o backoffice; usar template-auth.",
+      "Apps mixtas con landing publica + admin privado; usar template-blank-mixed.",
+      "Ecommerce con carrito, pagos y stock; necesita plantilla dedicada.",
+      "Plataformas con usuarios registrados, roles o paneles privados."
+    ]
+  },
+  "agent_decision_signals": {
+    "must_match_one_of": [
+      "landing",
+      "web",
+      "publica",
+      "publico",
+      "portfolio",
+      "marketing",
+      "presentacion",
+      "marca",
+      "institucional"
+    ],
+    "must_not_match": [
+      "login",
+      "admin",
+      "panel",
+      "dashboard",
+      "privado",
+      "backoffice",
+      "intranet",
+      "usuarios",
+      "roles",
+      "gestion interna"
+    ],
+    "ambiguous_signal_action": "prefer_only_if_user_says_no_login_or_no_admin",
+    "fallback_priority": "medium",
+    "selection_hint": "Usar SOLO cuando el usuario describe un sitio publico sin necesidad de login. Si menciona admin, panel, gestion, usuarios o roles, NO usar esta plantilla."
+  },
+  "access_profile": {
+    "app_visibility": "public",
+    "auth_scope": "none",
+    "has_public_area": true,
+    "has_admin_area": false,
+    "root_requires_auth": false,
+    "home_path": "/",
+    "about_path": "/about",
+    "contact_path": "/contact",
+    "notes": "Todas las rutas son publicas. No hay login ni rutas protegidas. Si el usuario pide login o admin, esta plantilla no es la correcta — redirigir a template-blank-mixed o template-auth."
+  },
+  "routes": [
+    {
+      "path": "/",
+      "name": "Landing",
+      "visibility": "public",
+      "component": "src/pages/Landing.tsx",
+      "purpose": "Pagina publica principal. El agente debe adaptarla al negocio/marca/proyecto: hero, secciones, CTA, branding."
+    },
+    {
+      "path": "/about",
+      "name": "About",
+      "visibility": "public",
+      "component": "src/pages/About.tsx",
+      "purpose": "Pagina publica para la historia, equipo o marca. El agente puede personalizar o eliminar si no aplica."
+    },
+    {
+      "path": "/contact",
+      "name": "Contact",
+      "visibility": "public",
+      "component": "src/pages/Contact.tsx",
+      "purpose": "Pagina publica para contacto. El agente debe convertirla en formulario real conectado a backend si el usuario quiere persistir mensajes."
+    }
+  ],
+  "design_system": {
+    "color_space": "HSL",
+    "theme_file": "src/index.css",
+    "tailwind_version": "3.x",
+    "fonts": {
+      "sans": "Geist (loaded via Google Fonts)",
+      "display": "Geist (same family; use font-display utility for hero headings)",
+      "mono": "Geist Mono"
+    },
+    "palette": {
+      "intent": "professional + warm accent (blue primary, orange accent)",
+      "primary": "214 84% 56%",
+      "accent": "24 100% 60%",
+      "background": "0 0% 100%",
+      "secondary": "220 26% 18%",
+      "text": "224 15% 15%",
+      "light_mode": "default HSL tokens in src/index.css",
+      "dark_mode": "available via .dark class on html"
+    },
+    "animations": [
+      {
+        "name": "animate-entrance",
+        "purpose": "Premium slide-up + fade. Apply to hero sections and key surfaces"
+      },
+      {
+        "name": "animate-reveal",
+        "purpose": "Clip-path reveal left-to-right. Apply to logos, brand marks, key headings"
+      },
+      {
+        "name": "animate-marquee",
+        "purpose": "Infinite horizontal scroll. Use for client logos, badges, partner rows"
+      },
+      {
+        "name": "animate-fade-in",
+        "purpose": "Light fade-up on scroll or initial mount"
+      }
+    ],
+    "easing": "--ease-out-expo (cubic-bezier(0.19, 1, 0.22, 1)) is the premium curve. Prefer it over default ease-out for marketing surfaces",
+    "guidance": "Edit src/index.css to retune the palette by changing the HSL values in :root. Keep the Tailwind 3/shadcn token structure (hsl(var(--token))). Keep this HSL color system unless the template is migrated first. Use existing animate-* utilities and reusable classes instead of inventing new patterns."
+  },
+  "frontend_contract": {
+    "framework": "vite-react",
+    "language": "typescript",
+    "router": "react-router-dom",
+    "styling": "tailwindcss 3 + shadcn/ui (HSL CSS variables in src/index.css)",
+    "icons": "lucide-react",
+    "state": [
+      "@tanstack/react-query",
+      "React state"
+    ],
+    "sdk": {
+      "client_file": "src/lib/dypai.ts",
+      "import": "import { dypai } from '@/lib/dypai'",
+      "api_patterns": [
+        "dypai.api.get(name)",
+        "dypai.api.post(name, body)",
+        "dypai.api.upload(name, file)"
+      ],
+      "auth_patterns": []
+    },
+    "entrypoints": [
+      "src/main.tsx",
+      "src/App.tsx"
+    ],
+    "files": [
+      "src/App.tsx",
+      "src/pages/Landing.tsx",
+      "src/pages/About.tsx",
+      "src/pages/Contact.tsx",
+      "src/pages/NotFound.tsx",
+      "src/pages/Login.tsx",
+      "src/pages/ForgotPassword.tsx",
+      "src/pages/ResetPassword.tsx",
+      "src/components/landing/Header.tsx",
+      "src/components/landing/Hero.tsx",
+      "src/components/landing/Features.tsx",
+      "src/components/landing/CTA.tsx",
+      "src/components/landing/Footer.tsx",
+      "src/lib/dypai.ts",
+      "src/lib/utils.ts",
+      "src/index.css"
+    ],
+    "important_directories": [
+      "src/components/ui",
+      "src/components/landing",
+      "src/hooks",
+      "src/lib",
+      "src/pages"
+    ],
+    "landing_components": {
+      "compose_file": "src/pages/Landing.tsx",
+      "sections": [
+        {
+          "name": "Header",
+          "file": "src/components/landing/Header.tsx",
+          "purpose": "Navbar sticky con logo + nav links + boton Contact → /contact"
+        },
+        {
+          "name": "Hero",
+          "file": "src/components/landing/Hero.tsx",
+          "purpose": "Headline + subtitulo + CTAs principales (Contact / About)"
+        },
+        {
+          "name": "Features",
+          "file": "src/components/landing/Features.tsx",
+          "purpose": "Grid de value props del producto/servicio"
+        },
+        {
+          "name": "CTA",
+          "file": "src/components/landing/CTA.tsx",
+          "purpose": "Cierre final con CTA hacia /contact"
+        },
+        {
+          "name": "Footer",
+          "file": "src/components/landing/Footer.tsx",
+          "purpose": "Copyright + enlaces secundarios (About, Contact, legal)"
+        }
+      ],
+      "guidance": "La landing esta distribuida en componentes por seccion. Edita el component especifico que el usuario menciona ('cambia el hero', 'arregla los features') en lugar de regenerar Landing.tsx entero. Para reordenar secciones, edita src/pages/Landing.tsx."
+    },
+    "shipped_but_not_routed": [
+      "src/pages/Login.tsx",
+      "src/pages/ForgotPassword.tsx",
+      "src/pages/ResetPassword.tsx"
+    ],
+    "safe_to_replace": [
+      "src/pages/Landing.tsx",
+      "src/pages/About.tsx",
+      "src/pages/Contact.tsx",
+      "src/components/landing/Header.tsx",
+      "src/components/landing/Hero.tsx",
+      "src/components/landing/Features.tsx",
+      "src/components/landing/CTA.tsx",
+      "src/components/landing/Footer.tsx"
+    ],
+    "safe_to_extend": [
+      "src/App.tsx"
+    ],
+    "preserve_unless_requested": [
+      "src/lib/dypai.ts",
+      "src/lib/utils.ts",
+      "src/pages/Login.tsx",
+      "src/pages/ForgotPassword.tsx",
+      "src/pages/ResetPassword.tsx"
+    ],
+    "expected_first_build_surface": {
+      "max_new_pages": 2,
+      "primary_file": "src/pages/Landing.tsx",
+      "guidance": "El primer build debe transformar Landing.tsx en una presentacion visualmente potente y especifica del proyecto/marca. About y Contact se adaptan si tienen sentido, o se eliminan. No crear paginas extra ni admin."
+    }
+  },
+  "backend_contract": {
+    "mode": "empty-domain-backend",
+    "has_dypai_folder": false,
+    "built_in_capabilities": [],
+    "endpoints": [],
+    "workflows": [],
+    "guidance": [
+      "Esta plantilla no requiere backend para funcionar; es una web estatica con un cliente DYPAI listo por si se necesitan formularios publicos.",
+      "Si el usuario pide formulario de contacto persistente, crear tabla + endpoint reales y validar.",
+      "Si el usuario pide newsletter o lead capture, idem.",
+      "No crear auth: esta plantilla es publica por diseño."
+    ]
+  },
+  "backend_reuse_contract": {
+    "existing_tables": [],
+    "existing_endpoints": [],
+    "existing_workflows": [],
+    "platform_capabilities": [],
+    "must_reuse": [],
+    "may_extend": [
+      "Crear tablas para leads, contactos, suscriptores newsletter, mensajes de contacto",
+      "Crear endpoints publicos con auth_mode public para recibir submits",
+      "Anadir rutas publicas adicionales (Servicios, Precios, Blog, etc.)"
+    ],
+    "must_not_duplicate": [
+      "No crear auth ni login en esta plantilla",
+      "No crear rutas privadas con ProtectedRoute"
+    ]
+  },
+  "database_contract": {
+    "mode": "empty-domain-schema",
+    "schema_path": null,
+    "tables": [],
+    "system_tables_used": [],
+    "guidance": [
+      "No hay tablas de dominio en la plantilla.",
+      "Si se crean tablas (leads, contact_messages, newsletter), no usar user_id porque no hay auth: usar campos publicos como email, name, message, created_at."
+    ]
+  },
+  "asset_contract": {
+    "public_assets": [],
+    "generated_images": [],
+    "guidance": [
+      "Una landing necesita visuales potentes. Generar imagen hero + assets de seccion cuando aporten al primer impacto.",
+      "Mantener una sola direccion visual coherente con la marca del usuario.",
+      "No meter imagenes pesadas como contexto del modelo; usar rutas o resumen."
+    ]
+  },
+  "media_plan": {
+    "should_generate_images": true,
+    "default_image_count": 2,
+    "max_image_count": 4,
+    "image_targets": [
+      "hero principal",
+      "seccion de servicios o portfolio",
+      "imagen secundaria opcional",
+      "imagen para about opcional"
+    ],
+    "guidance": "Las landings viven del impacto visual: generar al menos hero + una imagen de seccion fuerte. Maximo 4 imagenes en el primer build. Mantener estilo visual consistente."
+  },
+  "default_first_screen": {
+    "page": "src/pages/Landing.tsx",
+    "shape": "landing con hero (titulo + subtitulo + CTA + imagen), 2-4 secciones (servicios/portfolio/testimonios/precios segun encaje), footer con CTA hacia contacto",
+    "data_strategy": "contenido estatico curado al negocio del usuario; solo crear backend si la web necesita persistir leads, mensajes o suscripciones",
+    "interaction": "CTAs hacia /contact o anchors internos; formulario de contacto funciona como mailto o como POST a endpoint si se crea",
+    "routing": "registrar nuevas rutas publicas en src/App.tsx si se anaden secciones (servicios, precios, blog, etc.)"
+  },
+  "agent_brief": {
+    "already_included": [
+      "Landing publica reemplazable en src/pages/Landing.tsx",
+      "About y Contact placeholders en src/pages/",
+      "Cliente DYPAI configurado en src/lib/dypai.ts (sin auth requerida)",
+      "shadcn/ui, Tailwind, react-query, sonner y lucide-react listos",
+      "Sin auth activa: el sitio es 100% publico por defecto",
+      "Pages de auth SHIPPED PERO NO RUTADAS en src/pages/ (Login, ForgotPassword, ResetPassword) — listas para activar si el usuario decide despues que quiere login"
+    ],
+    "adaptation_steps": [
+      "Adaptar Landing.tsx al proyecto/marca/servicio del usuario: hero, secciones, CTA, branding visual.",
+      "Adaptar About.tsx con la historia real o eliminar si no aplica.",
+      "Adaptar Contact.tsx: si el usuario quiere recibir mensajes, convertir en formulario real con endpoint publico.",
+      "Generar imagenes hero/seccion para reforzar branding.",
+      "Si hay formulario de contacto o newsletter, crear tabla + endpoint con auth_mode public.",
+      "No introducir auth en el primer build a menos que el usuario lo pida explicitamente.",
+      "Si el usuario pide auth/login mas adelante: NO reescribir desde cero — descomentar los imports de Login/ForgotPassword/ResetPassword en src/App.tsx, anadir sus <Route>, y envolver rutas privadas con <ProtectedRoute> del SDK.",
+      "Validar build antes de cerrar."
+    ],
+    "do_not_rebuild": [
+      "No borrar src/pages/Login.tsx, ForgotPassword.tsx ni ResetPassword.tsx — vienen incluidas como escape hatch",
+      "No reescribir las pages de auth desde cero si el usuario pide login: usar las que ya estan en src/pages/",
+      "No crear panel admin a menos que el usuario lo pida (y entonces preferir template-blank-mixed o template-auth)",
+      "Si el usuario pide gestion interna desde el inicio, redirigir a template-blank-mixed o template-auth"
+    ],
+    "first_build_goal": "Una landing publica visualmente potente y especifica del negocio del usuario, con About y Contact alineados, lista para recibir trafico real.",
+    "completion_checks": [
+      "La app compila",
+      "La home / muestra contenido del negocio del usuario (no placeholder generico)",
+      "Imagenes generadas tienen estilo coherente y aportan al primer impacto",
+      "Los enlaces internos funcionan",
+      "Si Contact tiene formulario que persiste, existe endpoint real validado y es publico",
+      "No hay rutas protegidas ni ProtectedRoute en App.tsx"
+    ]
+  },
+  "customization_targets": [
+    {
+      "key": "brand_name",
+      "files": [
+        "src/pages/Landing.tsx",
+        "src/pages/About.tsx",
+        "src/lib/dypai.ts"
+      ],
+      "description": "Nombre visible del proyecto/marca en la web."
+    },
+    {
+      "key": "landing_content",
+      "files": [
+        "src/pages/Landing.tsx"
+      ],
+      "description": "Hero, secciones, copy, CTA, branding visual."
+    },
+    {
+      "key": "public_pages",
+      "files": [
+        "src/pages/About.tsx",
+        "src/pages/Contact.tsx",
+        "src/App.tsx"
+      ],
+      "description": "Paginas publicas secundarias: about, contact, servicios, precios, blog."
+    },
+    {
+      "key": "theme",
+      "files": [
+        "src/index.css"
+      ],
+      "description": "Tokens visuales que definen el estilo de la web."
+    },
+    {
+      "key": "lead_capture_backend",
+      "files": [
+        "dypai/**"
+      ],
+      "description": "Tabla + endpoint publico para recibir leads, mensajes de contacto o suscripciones (solo si la web los necesita)."
+    }
+  ],
+  "verification_contract": {
+    "commands": [
+      "npm run build"
+    ],
+    "manual_checks": [
+      "La raiz / muestra una landing del proyecto del usuario (no placeholder generico).",
+      "About y Contact muestran contenido coherente o han sido eliminados si no aplican.",
+      "Los CTAs llevan a paginas existentes (anchors o /contact).",
+      "No hay rutas protegidas; cualquier visitante anonimo accede a todo el sitio.",
+      "Si hay formulario de contacto que persiste, el endpoint es public y funciona."
+    ],
+    "agent_checks": [
+      "Si se anaden endpoints, validar que auth_mode es public.",
+      "Si se anaden rutas, registrarlas en src/App.tsx fuera de cualquier guard.",
+      "No introducir auth ni admin: si el usuario lo pide, redirigir a template-blank-mixed o template-auth."
+    ]
+  },
+  "required_env_vars": [
+    "VITE_DYPAI_URL"
+  ],
+  "required_integrations": [],
+  "preferred_providers": {
+    "frontend": "vite",
+    "auth": "none",
+    "backend": "DYPAI workflows (opcional)"
+  },
+  "dependencies": [
+    "@dypai-ai/client-sdk",
+    "@tanstack/react-query",
+    "react-router-dom",
+    "lucide-react",
+    "sonner",
+    "zod"
+  ],
+  "agent_instructions": "Usa esta plantilla para webs publicas sin login: landings, portfolios, sitios institucionales, micrositios. Por defecto NO tiene auth activa (las rutas son todas publicas), pero las pages Login, ForgotPassword y ResetPassword vienen INCLUIDAS en src/pages/ como escape hatch listo para activar. En el primer build, transforma Landing.tsx en una presentacion potente del proyecto/marca del usuario, adapta About y Contact, y genera imagenes hero/seccion para reforzar branding. Si el usuario quiere persistir leads o mensajes de contacto, crea tabla + endpoint con auth_mode public y conectalo. SI el usuario pide auth/login mas adelante (no en el primer build): NO reescribas desde cero — descomenta los imports de Login/ForgotPassword/ResetPassword en src/App.tsx, anade sus <Route> publicas, y envuelve cualquier ruta privada nueva con <ProtectedRoute>. Si desde el inicio el usuario quiere panel admin + landing, redirige a template-blank-mixed; si solo quiere area privada cerrada, redirige a template-auth."
+}
